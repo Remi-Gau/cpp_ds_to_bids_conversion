@@ -1,11 +1,13 @@
-function convert_anat(anat_file, subject_dir, subLabel)
+function convert_anat(opt, anat_file, subject_dir, subLabel)
     
-    disp(anat_file);
+    fprintf('\n %s\n',  anat_file);
     
     anat_filename = fullfile(subject_dir, 'anat', ...
         ['sub-' subLabel '_T1w.nii']);
     
-    disp(anat_filename);
+    fprintf(' %s\n',  anat_filename);
+    
+    if opt.anat.convert
     
     % copy anat
     spm_copy(anat_file, anat_filename);
@@ -21,5 +23,7 @@ function convert_anat(anat_file, subject_dir, subLabel)
     % zip and delete original
     gzip(anat_filename)
     delete(anat_filename)
+    
+    end
     
 end

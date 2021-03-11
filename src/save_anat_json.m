@@ -1,0 +1,6 @@
+function save_anat_json(target_folder, json_opt, anat_json)
+
+    spm_jsonwrite(fullfile(target_folder, ...
+        'T1w.json'), ...
+        anat_json, json_opt);
+end
