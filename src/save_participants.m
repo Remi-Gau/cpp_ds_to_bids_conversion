@@ -1,4 +1,4 @@
-function save_participants(participants_tsv, source_folder, target_folder)
+function save_participants(participants_tsv, source_folder, target_folder, json_opt)
     
     fields_order = {
     'participant_id'
@@ -22,4 +22,6 @@ function save_participants(participants_tsv, source_folder, target_folder)
     
     bids.util.tsvwrite(fullfile(target_folder, 'participants.tsv'), ...
         participants_tsv);
+    
+    create_data_dictionnary(fullfile(target_folder, 'participants.tsv'), json_opt)
 end

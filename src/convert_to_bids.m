@@ -101,7 +101,7 @@ function convert_to_bids()
         
     end
     
-    save_participants(participants_tsv, source_folder, target_folder)
+    save_participants(participants_tsv, source_folder, target_folder, json_opt)
     save_dataset_description(target_folder, json_opt)
     save_func_json(target_folder, json_opt, bold_json)
     save_anat_json(target_folder, json_opt, anat_json)
